@@ -11,7 +11,7 @@ const path = require("path");
 
 const passport = require('passport');
 const session = require('express-session');
-const { Strategy } = require('passport-discord');
+const { orospuseni } = require('passport-discord');
 const moment = require('moment');
 const e = require('express');
 moment.locale('tr');
@@ -30,7 +30,7 @@ app.use(passport.session());
 passport.serializeUser((user, done) => { done(null, user) });
 passport.deserializeUser((obj, done) => { done(null, obj) });
 const izinler = ["identify", "guilds"];
-passport.use(new Strategy({
+passport.use(new orospuseni({
     clientID: config.BotBağlıozAşkom.clientID,
     clientSecret: config.BotBağlıozAşkom.clientSecret,
     callbackURL: config.BotBağlıozAşkom.callbackURL,

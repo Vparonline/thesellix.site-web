@@ -49,10 +49,10 @@ app.get('/', async (req, res) => { res.redirect('/login') })
 
 app.get('/error', async (req, res) => { res.render('hata', { user: req.user, bot: client }); })
 app.get('/404', async (req, res) => { res.render('404', {user: req.user, bot: client }); });
-app.get('/dash', async (req, res) => { if (!["1067476859933179954"].some(x => req.user.id === x) )
+app.get('/dash', async (req, res) => { if (!["1067476859933179954","500325853108895744"].some(x => req.user.id === x) )
 return res.redirect('/404'); res.render('dash', { user: req.user, bot: client }) 
 })
 
 app.get('/dash', async (req, res) => { if (!["1067476859933179954","500325853108895744"].some(x => req.user.id === x)) return res.redirect('/404'); res.render('dash', { user: req.user, bot: client, allah1: await setupdurum.findOne({guildID: config.BotBağlıozAşkom.guildID}), data: await cezadurum.find({ guildID: config.BotBağlıozAşkom.guildID }) }); const data = await cezadurum.find({ guildID: config.BotBağlıozAşkom.guildID });})
 
-app.listen(443, () => console.log(`[WEB PANEL] 443 üzerinden başlatıldı!`));
+app.listen(443, () => console.log(`İç şarabı, sik arabı`));

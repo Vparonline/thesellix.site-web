@@ -13,7 +13,6 @@ const passport = require('passport');
 const session = require('express-session');
 const { orospuseni } = require('passport-discord');
 const moment = require('moment');
-const e = require('express');
 moment.locale('tr');
 
 app.engine('ejs', ejs.__express);
@@ -21,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(bParser.json());
 app.use(bParser.urlencoded({ extended: true }));
 app.use(cParser());
-app.set('views', path.join(__dirname, './Moderation/Panel/Controller'));
+app.set('Controller', path.join(__dirname, './Moderation/Panel/Controller'));
 app.use('/css', express.static(path.join(__dirname, './Moderation/Panel/Controller/Yol/assets/css')));
 app.use(session({ secret: 'xd', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
